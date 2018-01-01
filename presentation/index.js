@@ -70,7 +70,8 @@ const images = {
     }
   },
   tools: {
-    patternLab: require('./../assets/tools_pattern-lab.png')
+    patternLab: require('./../assets/tools_pattern-lab.png'),
+    styleGuides: require('./../assets/tools_styleguidesio.png')
   },
   sample: {
     lego: {
@@ -162,15 +163,17 @@ export default class Presentation extends React.Component {
           * we should try to code the way we design
         `}
         >
-          <Text
-            style={{
-              fontSize: '1.96rem',
-              marginTop: '40px',
-              marginBottom: '40px'
-            }}
-          >
-            Should Developers design? Should Designers develop?
-          </Text>
+          <Appear>
+            <Text
+              style={{
+                fontSize: '1.96rem',
+                marginTop: '40px',
+                marginBottom: '40px'
+              }}
+            >
+              Should Developers design? Should Designers develop?
+            </Text>
+          </Appear>
           <Image
             src={
               'https://cdn.dribbble.com/users/729829/screenshots/2712522/galshir.gif'
@@ -448,6 +451,26 @@ export default class Presentation extends React.Component {
           <Image src={images.tools.patternLab.replace('/', '')} width="600px" />
         </Slide>
 
+        {/* Style Guides - http://styleguides.io */}
+        <Slide
+          transition={['slide']}
+          notes={``}
+          bgDarken={0.85}
+          bgImage={images.tools.styleGuides.replace('/', '')}
+        >
+          <Link textColor="primary" href="http://styleguides.io">
+            http://styleguides.io
+          </Link>
+          <List textColor="primary">
+            <ListItem style={{ fontSize: '1.2rem' }}>Mailchimp</ListItem>
+            <ListItem style={{ fontSize: '1.2rem' }}>Codepen</ListItem>
+            <ListItem style={{ fontSize: '1.2rem' }}>Starbucks</ListItem>
+            <ListItem style={{ fontSize: '1.2rem' }}>Yelp</ListItem>
+            <ListItem style={{ fontSize: '1.2rem' }}>Lonely Planet</ListItem>
+            <ListItem style={{ fontSize: '1.2rem' }}>More ....</ListItem>
+          </List>
+        </Slide>
+
         {/* REACT & REDUX */}
         <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
           <Heading size={6} caps>
@@ -526,16 +549,62 @@ export default class Presentation extends React.Component {
         {/* ADVANTAGES */}
         <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>
-            Standard List
+            Advantages
           </Heading>
           <List>
-            <ListItem>Item 1</ListItem>
-
-            <ListItem>
-              Atoms & Molecules are trully re-usable<br />
-              <small>Make an NPM module of it</small>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Purity<br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                <b>testable</b>, <b>storybook</b>able (knobs)
+              </small>
             </ListItem>
-            <ListItem>Easy to split work across developers</ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Atoms & Molecules are truly re-usable<br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                <b>NPM</b> module
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Easy to split tasks<br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                <b>Integration</b>: Atoms, Molecules, Organisms
+              </small>
+              <br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                <b>Business logic</b>: Ecosystems, Environment
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Less self-questioning<br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                approach, naming, directory structure, ...
+              </small>
+            </ListItem>
           </List>
         </Slide>
 
@@ -557,21 +626,76 @@ export default class Presentation extends React.Component {
             Sustainable code base?
           </Heading>
           <List>
-            <ListItem>Single responsability</ListItem>
-            <ListItem>Name it explicitly</ListItem>
-            <ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Single responsibility<br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                do one thing but do it well
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Name explicitly
+              <br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                self-documented, DDD
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
               No outer margin <sup>(width 100%)</sup>
               <br />
-              <small>Delegate to parent</small>
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                delegate responsibility to parent
+              </small>
             </ListItem>
-            <ListItem>Extensible, themable and self-documented</ListItem>
-            <ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Fluid over RWD
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Extensible & themable<br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                children, styled-theme
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
               Consistent styling & layout <br />
-              <small>color, typography, spacing plalettes, styled-theme</small>
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                color, typography, spacing plalettes
+              </small>
             </ListItem>
-            <ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
               Embed<br />
-              <small>css, tests, stories, readme</small>
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                css, tests, readme, stories
+              </small>
             </ListItem>
           </List>
         </Slide>
