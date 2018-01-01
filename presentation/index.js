@@ -79,6 +79,11 @@ const images = {
       1: require('./../assets/sample_lego1.png'),
       2: require('./../assets/sample_lego2.png')
     }
+  },
+  cycles: {
+    0: require('./../assets/cycles0.jpg'),
+    1: require('./../assets/cycles1.png'),
+    2: require('./../assets/cycles2.png')
   }
 };
 
@@ -341,6 +346,20 @@ export default class Presentation extends React.Component {
           <Image src={images.sample.lego[2].replace('/', '')} />
         </Slide>
 
+        {/* DEVELOPMENT CYCLES */}
+        <Slide transition={['slide']} notes={``}>
+          <Heading
+            size={6}
+            textColor="secondary"
+            caps
+            style={{ marginBottom: '20px' }}
+          >
+            Production cycles
+          </Heading>
+          <Image src={images.cycles[1].replace('/', '')} width="600px" />
+          <Image src={images.cycles[2].replace('/', '')} width="600px" />
+        </Slide>
+
         {/* Advantages */}
         <Slide transition={['slide']} notes={``}>
           <Heading
@@ -539,13 +558,6 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        {/*
-        @TODO list advantage for each
-           Developper,
-           User,
-           Client,
-           */}
-
         {/* ADVANTAGES */}
         <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>
@@ -610,14 +622,119 @@ export default class Presentation extends React.Component {
 
         {/* DEVELOPMENT CYCLE */}
         <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
+          <Heading
+            size={6}
+            textColor="secondary"
+            caps
+            style={{ marginBottom: '80px' }}
+          >
             Production cycles
           </Heading>
-          <List>
-            <ListItem>Stage1</ListItem>
-            <ListItem>Stage2</ListItem>
-            <ListItem>Stage3</ListItem>
-          </List>
+          <Layout>
+            <Fill>
+              <Heading size={6} style={{ fontSize: '1.8rem' }}>
+                Stage 1
+              </Heading>
+              <List>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.3rem' }}>
+                  Designers<br />
+                  <small
+                    style={{
+                      color: '#000',
+                      fontSize: '1.1rem'
+                    }}
+                  >
+                    designing the <b>Atoms</b>
+                  </small>
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.3rem' }}>
+                  Developers<br />
+                  <small
+                    style={{
+                      color: '#000',
+                      fontSize: '1.1rem'
+                    }}
+                  >
+                    <b>nothing</b>
+                    <br />
+                    <i>or</i>
+                    <br />
+                    <b>base code</b>:<br />
+                    - api interface,<br />
+                    - auth,<br />
+                    - routing<br />
+                  </small>
+                </ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <Heading size={6} style={{ fontSize: '1.8rem' }}>
+                Stage 2
+              </Heading>
+              <List>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.3rem' }}>
+                  Designers<br />
+                  <small
+                    style={{
+                      color: '#000',
+                      fontSize: '1.1rem'
+                    }}
+                  >
+                    designing the <b>Organisms</b>
+                  </small>
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.3rem' }}>
+                  Developers<br />
+                  <small
+                    style={{
+                      color: '#000',
+                      fontSize: '1.1rem'
+                    }}
+                  >
+                    integrating the <b>Atoms</b>
+                  </small>
+                </ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <Heading size={6} style={{ fontSize: '1.8rem' }}>
+                ...
+              </Heading>
+            </Fill>
+            <Fill>
+              <Heading size={6} style={{ fontSize: '1.8rem' }}>
+                Stage x
+              </Heading>
+              <List>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.3rem' }}>
+                  Designers<br />
+                  <small
+                    style={{
+                      color: '#000',
+                      fontSize: '1.1rem'
+                    }}
+                  >
+                    <b>nothing</b>
+                    <br />
+                    <i>or</i>
+                    <br />
+                    designing other <b>A</b>, <b>M</b> or <b>O</b>
+                  </small>
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.3rem' }}>
+                  Developers<br />
+                  <small
+                    style={{
+                      color: '#000',
+                      fontSize: '1.1rem'
+                    }}
+                  >
+                    connecting <b>Ecosystems</b> to store<br />
+                  </small>
+                </ListItem>
+              </List>
+            </Fill>
+          </Layout>
         </Slide>
 
         {/* THOUGHTS */}
