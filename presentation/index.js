@@ -65,6 +65,16 @@ const images = {
       templates: require('./../assets/atomic_sample_template.png'),
       pages: require('./../assets/atomic_sample_page.png')
     }
+  },
+  tools: {
+    patternLab: require('./../assets/tools_pattern-lab.png')
+  },
+  sample: {
+    lego: {
+      0: require('./../assets/sample_lego0.png'),
+      1: require('./../assets/sample_lego1.png'),
+      2: require('./../assets/sample_lego2.png')
+    }
   }
 };
 
@@ -116,14 +126,8 @@ export default class Presentation extends React.Component {
           notes={`
                 * We used to work targeting specific screen size<br/>
                 * Many designs to validate<br/>
-                * Screen fragmentation keeps growing<br/>
-            `}
-        >
-          <Image src={images.intro.devices.replace('/', '')} />
-        </Slide>
+                * Screen fragmentation keeps growing<br/><br/>
 
-        <Slide
-          notes={`
                 * As the craft of Web design continues to evolves, we're
                 recognizing the need to develop thoughtful design systems rather
                 than creating simple collection of web pages...<br />
@@ -131,8 +135,45 @@ export default class Presentation extends React.Component {
                 * Let's focus on what's compose the page !<br/>
             `}
         >
-          <Image src={images.intro.screen_fragmentation.replace('/', '')} />
-          <Text>Screen fragmentation - @TODO add source</Text>
+          <Image src={images.intro.devices.replace('/', '')} />
+          <Image
+            src={images.intro.screen_fragmentation.replace('/', '')}
+            width="500px"
+          />
+          <Text
+            style={{
+              fontStyle: 'italic',
+              fontSize: '1rem',
+              marginTop: '40px'
+            }}
+          >
+            Screen fragmentation - @TODO add source
+          </Text>
+        </Slide>
+
+        <Slide
+          bgColor="#f9e696"
+          notes={`
+          * Lets talk the same language !
+          * we should try to design the way we code
+          * we should try to code the way we design
+        `}
+        >
+          <Text
+            style={{
+              fontSize: '1.96rem',
+              marginTop: '40px',
+              marginBottom: '40px'
+            }}
+          >
+            Should Developers design? Should Designers develop?
+          </Text>
+          <Image
+            src={
+              'https://cdn.dribbble.com/users/729829/screenshots/2712522/galshir.gif'
+            }
+            width="600px"
+          />
         </Slide>
 
         {/* INTRO - Brad Frost */}
@@ -187,7 +228,6 @@ export default class Presentation extends React.Component {
                 * No functional role on it's own<br/>
             `}
         >
-          {' '}
           <Image src={images.atomic.atoms.replace('/', '')} width="100px" />
           <Text
             style={{
@@ -289,28 +329,68 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        {/* ADVANTAGES */}
-        <Slide bgColor="secondary" transition={['slide']} notes={``}>
-          <Image src={images.atomic.pages.replace('/', '')} width="100px" />
-          <Heading textColor="tertiary" fit size={5}>
-            Advantage
-          </Heading>
-          <Text
-            textColor="primary"
+        {/* SAMPLES */}
+        <Slide transition={['slide']} notes={``}>
+          <Image src={images.sample.lego[0].replace('/', '')} width={'50%'} />
+          <Image src={images.sample.lego[2].replace('/', '')} />
+        </Slide>
+        <Slide transition={['slide']} notes={``} />
+
+        {/* Style Guides */}
+        <Slide transition={['slide']} notes={``}>
+          <Heading
+            textColor={'tertiary'}
             style={{
-              fontSize: '1.96rem',
+              textAlign: 'left',
+              fontSize: '3rem',
+              lineHeight: '3.5rem',
               marginTop: '40px',
               marginBottom: '40px'
             }}
           >
-            <b>Pages</b> are specific instances of templates that show what a UI
-            looks like with real representative content in place.
-          </Text>
-          <Image
-            src={images.atomic.sample.pages.replace('/', '')}
-            width="500px"
-          />
+            Create Design System, not pages.<br />The cornestone of good design
+            systems are styles guides!
+          </Heading>
+          <List>
+            <ListItem style={{ marginBottom: '20px' }}>
+              Organize design materials<br />
+              <small
+                style={{
+                  fontSize: '1.5rem'
+                }}
+              >
+                While providing guidelines, usage, and guardrails
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px' }}>
+              Make them alive and interactive<br />
+              <small
+                style={{
+                  fontSize: '1.5rem'
+                }}
+              >
+                So that you can see the impact of changes
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px' }}>
+              Share vocabulary & educate<br />
+              <small
+                style={{
+                  fontSize: '1.5rem'
+                }}
+              >
+                "What is the StatusBarButton?"
+              </small>
+            </ListItem>
+          </List>
         </Slide>
+
+        {/* Style Guides - PatternLab */}
+        <Slide transition={['slide']} notes={``} bgColor="#ededed">
+          <Image src={images.tools.patternLab.replace('/', '')} width="600px" />
+        </Slide>
+
+        {/* Style Guides - StoryBook */}
       </Deck>
     );
   }
