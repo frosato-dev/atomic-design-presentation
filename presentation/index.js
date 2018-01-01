@@ -10,6 +10,7 @@ import {
   ComponentPlayground,
   Deck,
   Fill,
+  Fit,
   Heading,
   Image,
   Layout,
@@ -48,6 +49,7 @@ const images = {
     'http://www.hdfmagazine.com/wp-content/uploads/2014/12/Caroline-Gutman-medium.jpeg',
   intro: {
     bradFrost: require('./../assets/intro_brad_frost.jpg'),
+    bradFrost2: require('./../assets/intro_brad_frost2.jpg'),
     devices: require('./../assets/intro_devices.png'),
     screen_fragmentation: require('./../assets/intro_screen_fragmentation.jpg')
   },
@@ -58,6 +60,7 @@ const images = {
     templates: require('./../assets/atomic_icon-template.png'),
     pages: require('./../assets/atomic_icon-page.png'),
     flow: require('./../assets/atomic_icon-flow.png'),
+    flowReact: require('./../assets/atomic_icon-flow-react.png'),
     sample: {
       atoms: require('./../assets/atomic_sample_atom.png'),
       molecules: require('./../assets/atomic_sample_molecule.png'),
@@ -331,10 +334,65 @@ export default class Presentation extends React.Component {
 
         {/* SAMPLES */}
         <Slide transition={['slide']} notes={``}>
-          <Image src={images.sample.lego[0].replace('/', '')} width={'50%'} />
+          <Image src={images.sample.lego[0].replace('/', '')} width="300px" />
           <Image src={images.sample.lego[2].replace('/', '')} />
         </Slide>
-        <Slide transition={['slide']} notes={``} />
+
+        {/* Advantages */}
+        <Slide transition={['slide']} notes={``}>
+          <Heading
+            size={6}
+            caps
+            textColor="tertiary"
+            style={{ marginBottom: '100px' }}
+          >
+            Advantages
+          </Heading>
+          <Layout>
+            <Fill>
+              <Heading size={6}>Team</Heading>
+              <List>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Shared vision
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Collaboration
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Productivity
+                </ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <Heading size={6}>Brand</Heading>
+              <List>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Strong identity
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Fast time to market
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Design library
+                </ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <Heading size={6}>User</Heading>
+              <List>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Consistent UX
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Quality UX
+                </ListItem>
+                <ListItem style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+                  Brand education
+                </ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
 
         {/* Style Guides */}
         <Slide transition={['slide']} notes={``}>
@@ -363,16 +421,6 @@ export default class Presentation extends React.Component {
               </small>
             </ListItem>
             <ListItem style={{ marginBottom: '20px' }}>
-              Make them alive and interactive<br />
-              <small
-                style={{
-                  fontSize: '1.5rem'
-                }}
-              >
-                So that you can see the impact of changes
-              </small>
-            </ListItem>
-            <ListItem style={{ marginBottom: '20px' }}>
               Share vocabulary & educate<br />
               <small
                 style={{
@@ -380,6 +428,16 @@ export default class Presentation extends React.Component {
                 }}
               >
                 "What is the StatusBarButton?"
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px' }}>
+              Make them alive and interactive<br />
+              <small
+                style={{
+                  fontSize: '1.5rem'
+                }}
+              >
+                So that you can see the impact of changes
               </small>
             </ListItem>
           </List>
@@ -390,7 +448,133 @@ export default class Presentation extends React.Component {
           <Image src={images.tools.patternLab.replace('/', '')} width="600px" />
         </Slide>
 
-        {/* Style Guides - StoryBook */}
+        {/* REACT & REDUX */}
+        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
+          <Heading size={6} caps>
+            Real world - React & Redux
+          </Heading>
+          <Image src={images.atomic.flowReact.replace('/', '')} />
+          <List>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Atoms <sup>(pure)</sup>
+              <br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                styled components
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Molecules <sup>(pure)</sup>
+              <br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                behavioural components, simple compositions
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Organisms <sup>(pure)</sup>
+              <br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                domain compositions
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              EcoSystems<br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                routes
+              </small>
+            </ListItem>
+            <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
+              Environment<br />
+              <small
+                style={{
+                  color: '#000',
+                  fontSize: '1.2rem'
+                }}
+              >
+                themes, auth coordinator
+              </small>
+            </ListItem>
+          </List>
+        </Slide>
+
+        {/*
+        @TODO list advantage for each
+           Developper,
+           User,
+           Client,
+           */}
+
+        {/* ADVANTAGES */}
+        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Standard List
+          </Heading>
+          <List>
+            <ListItem>Item 1</ListItem>
+
+            <ListItem>
+              Atoms & Molecules are trully re-usable<br />
+              <small>Make an NPM module of it</small>
+            </ListItem>
+            <ListItem>Easy to split work across developers</ListItem>
+          </List>
+        </Slide>
+
+        {/* DEVELOPMENT CYCLE */}
+        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Production cycles
+          </Heading>
+          <List>
+            <ListItem>Stage1</ListItem>
+            <ListItem>Stage2</ListItem>
+            <ListItem>Stage3</ListItem>
+          </List>
+        </Slide>
+
+        {/* THOUGHTS */}
+        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Sustainable code base?
+          </Heading>
+          <List>
+            <ListItem>Single responsability</ListItem>
+            <ListItem>Name it explicitly</ListItem>
+            <ListItem>
+              No outer margin <sup>(width 100%)</sup>
+              <br />
+              <small>Delegate to parent</small>
+            </ListItem>
+            <ListItem>Extensible, themable and self-documented</ListItem>
+            <ListItem>
+              Consistent styling & layout <br />
+              <small>color, typography, spacing plalettes, styled-theme</small>
+            </ListItem>
+            <ListItem>
+              Embed<br />
+              <small>css, tests, stories, readme</small>
+            </ListItem>
+          </List>
+        </Slide>
       </Deck>
     );
   }
