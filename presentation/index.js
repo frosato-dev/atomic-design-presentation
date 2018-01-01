@@ -134,8 +134,9 @@ export default class Presentation extends React.Component {
           transition={['slide']}
           notes={`
                 * We used to work targeting specific screen size<br/>
-                * Many designs to validate<br/>
+                * Many designs to validate, "va et viens"<br/>
                 * Screen fragmentation keeps growing<br/><br/>
+                * Pixel perfect is a myth
 
                 * As the craft of Web design continues to evolves, we're
                 recognizing the need to develop thoughtful design systems rather
@@ -156,7 +157,7 @@ export default class Presentation extends React.Component {
               marginTop: '40px'
             }}
           >
-            Screen fragmentation - @TODO add source
+            http://opensignal.com - Android screen fragmentation
           </Text>
         </Slide>
 
@@ -767,7 +768,7 @@ export default class Presentation extends React.Component {
               </small>
             </ListItem>
             <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
-              No outer margin <sup>(width 100%)</sup>
+              No outer margin
               <br />
               <small
                 style={{
@@ -775,7 +776,7 @@ export default class Presentation extends React.Component {
                   fontSize: '1.2rem'
                 }}
               >
-                delegate responsibility to parent
+                delegate responsibility to parent, width = 100% (often)
               </small>
             </ListItem>
             <ListItem style={{ marginBottom: '20px', fontSize: '2rem' }}>
